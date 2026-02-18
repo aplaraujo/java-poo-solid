@@ -1,5 +1,5 @@
 package org.example;
-
+// Essa classe tem uma única responsabilidade, que é a de mostrar os dados relacionados a uma pessoa
 public class Pessoa {
     private String nome;
     private double peso;
