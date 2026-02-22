@@ -2,12 +2,12 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Aluno aluno1 = new Aluno("Zequinha", 8.5);
-        Aluno aluno2 = new Aluno(aluno1);
+        Student s = new Student("John", 3.5);
+        Student s2 = new Student(s);
 
-        aluno1.setNome("Mariazinha");
+        s.setName("Sarah");
 
-        System.out.println("Original: " + aluno1.getNome());
-        System.out.println("Cópia: " + aluno2.getNome());
+        System.out.println("Original: " + s.getName());
+        System.out.println("Clone: " + s2.getName());
     }
 }
