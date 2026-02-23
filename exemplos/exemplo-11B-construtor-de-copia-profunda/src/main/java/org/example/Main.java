@@ -2,12 +2,12 @@ package org.example;
 
 public class Main {
     public static void main(String[] args) {
-        Aluno aluno1 = new Aluno("Zequinha", 8.5, new Endereco("01310-900"));
-        Aluno aluno2 = new Aluno(aluno1);
+        Student s = new Student("John", 3.5, new Address(12345));
+        Student s2 = new Student(s);
 
-        aluno1.getEndereco().setCep("02994-070");
+        s.getAddress().setPostalCode(54321);
 
-        System.out.println("Original: " + aluno1.getEndereco().getCep());
-        System.out.println("Cópia: " + aluno2.getEndereco().getCep());
+        System.out.println("Original: " + s.getAddress().getPostalCode());
+        System.out.println("Clone: " + s2.getAddress().getPostalCode());
     }
 }
