@@ -8,9 +8,10 @@ public class Main {
         int[][] mat2 = {{1, 2, 3}, {4, 5, 6}};
 
         // Comparar o conteúdo de duas matrizes
-        boolean isEqual = Arrays.deepEquals(mat1, mat2);
+        System.out.println("As matrizes são iguais? " + compararMatrizes(mat1, mat2));
+    }
 
-
-        System.out.println("As matrizes são iguais? " + isEqual);
+    public static boolean compararMatrizes(int[][]matA, int[][]matB) {
+        return Arrays.deepEquals(matA, matB);
     }
 }
