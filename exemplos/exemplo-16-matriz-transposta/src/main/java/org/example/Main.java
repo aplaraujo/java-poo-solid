@@ -14,16 +14,7 @@ public class Main {
             System.out.println();
         }
 
-        // Matriz transposta
-        int linhas = mat.length;
-        int colunas = mat[0].length;
-        int[][] transposta = new int[colunas][linhas];
-
-        for(i = 0; i < linhas; i++) {
-            for(j = 0; j < colunas; j++) {
-                transposta[j][i] = mat[i][j];
-            }
-        }
+        int[][] transposta = matrizTransposta(mat);
 
         System.out.println("==========================");
         System.out.println("Matriz transposta: ");
@@ -34,5 +25,20 @@ public class Main {
             }
             System.out.println();
         }
+    }
+
+    public static int[][] matrizTransposta(int[][]mat) {
+        // Matriz transposta
+        int linhas = mat.length;
+        int colunas = mat[0].length;
+        int[][] transposta = new int[colunas][linhas];
+
+        for(int i = 0; i < linhas; i++) {
+            for(int j = 0; j < colunas; j++) {
+                transposta[j][i] = mat[i][j];
+            }
+        }
+
+        return transposta;
     }
 }
