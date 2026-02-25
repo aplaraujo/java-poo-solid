@@ -14,16 +14,7 @@ public class Main {
             System.out.println();
         }
 
-        // Matriz oposta
-        int linhas = mat.length;
-        int colunas = mat[0].length;
-        int[][] oposta = new int[linhas][colunas];
-
-        for(i = 0; i < linhas; i++) {
-            for(j = 0; j < colunas; j++) {
-                oposta[i][j] = -mat[i][j];
-            }
-        }
+        int[][] oposta = matrizOposta(mat);
 
         System.out.println("==========================");
         System.out.println("Matriz oposta: ");
@@ -34,5 +25,20 @@ public class Main {
             }
             System.out.println();
         }
+    }
+
+    public static int[][] matrizOposta(int[][]mat) {
+        // Matriz oposta
+        int linhas = mat.length;
+        int colunas = mat[0].length;
+        int[][] oposta = new int[linhas][colunas];
+
+        for(int i = 0; i < linhas; i++) {
+            for(int j = 0; j < colunas; j++) {
+                oposta[i][j] = -mat[i][j];
+            }
+        }
+
+        return oposta;
     }
 }
