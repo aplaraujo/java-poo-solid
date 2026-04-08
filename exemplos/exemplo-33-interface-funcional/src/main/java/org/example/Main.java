@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -26,6 +28,18 @@ public class Main {
 
         // Predicate - interface que recebe um parâmetro, mas que retona um valor lógico (verdadeiro / falso)
         Predicate<Integer> verificaNumeroPar = num -> num % 2 == 0;
+
+        List<Pessoa> pessoas = List.of(
+                new Pessoa("Maria", 21),
+                new Pessoa("João", 32),
+                new Pessoa("Eduardo", 42),
+                new Pessoa("Ana", 19)
+        );
+
+        System.out.println("===== Lista de pessoas =====");
+        pessoas.forEach(pessoa -> System.out.println(pessoa));
+
+        System.out.println("============================");
 
         System.out.println("Soma: " + soma.calcular(10, 20));
 
