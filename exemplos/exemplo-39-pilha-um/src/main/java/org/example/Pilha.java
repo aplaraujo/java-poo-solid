@@ -1,58 +1,48 @@
 package org.example;
 
 public class Pilha {
-    private int topo;
-    private int[] lista;
+    private No refNoEntradaPilha;
 
-    public Pilha(int tamanho) {
-        topo = -1;
-        lista = new int[tamanho];
+    public Pilha() {
+        this.refNoEntradaPilha = null;
     }
 
-    public int getTopo() {
-        return topo;
+    public No topo() {
+        return this.refNoEntradaPilha;
     }
 
-    public int[] getLista() {
-        return lista;
+    public void empilhar(No valor) {
+        No refAuxiliar = this.refNoEntradaPilha;
+        this.refNoEntradaPilha = valor;
+        this.refNoEntradaPilha.setProximo(refAuxiliar);
     }
 
-    public void empilhar(int elemento) {
-        if (verificarPilhaCheia()) {
-            topo++;
-            lista[topo] = elemento;
+    public No desempilhar() {
+        if (!pilhaEstaVazia()) {
+            No retirado = this.refNoEntradaPilha;
+            this.refNoEntradaPilha = this.refNoEntradaPilha.getProximo();
+            return retirado;
         }
+        return null;
     }
 
-    public void desempilhar() {
-        if (verificarPilhaVazia()) {
-            topo--;
+    public boolean pilhaEstaVazia() {
+        return this.refNoEntradaPilha == null;
+    }
+
+    @Override
+    public String toString() {
+        String stringRetorno = "";
+        No noAuxiliar = refNoEntradaPilha;
+        
+        while(true) {
+            if (noAuxiliar != null) {
+                stringRetorno += "[Nó: {dado= " + noAuxiliar.getConteudo() + "}]\n";
+                noAuxiliar = noAuxiliar.getProximo();
+            } else {
+                break;
+            }
         }
-    }
-
-    public int retornarElementoNoTopoDaPilha() {
-        return lista[topo];
-    }
-
-    public boolean verificarPilhaVazia() {
-        if (topo == -1) {
-            System.out.println("Pilha vazia");
-            return false;
-        }
-        return true;
-    }
-
-    public boolean verificarPilhaCheia() {
-        if (topo == lista.length - 1) {
-            System.out.println("Pilha cheia");
-            return false;
-        }
-        return true;
-    }
-
-    public void imprimirPilha() {
-        for(int i = 0; i < lista.length; i++) {
-            System.out.println(lista[i]);
-        }
+        return stringRetorno;
     }
 }
