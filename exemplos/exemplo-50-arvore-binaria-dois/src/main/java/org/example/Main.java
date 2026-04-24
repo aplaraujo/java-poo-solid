@@ -1,17 +1,23 @@
-package org.example;
+ package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+ import org.example.model.Objeto;
+
+ public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        ArvoreBinaria<Objeto> nossaArvore = new ArvoreBinaria<>();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        nossaArvore.inserir(new Objeto(13));
+        nossaArvore.inserir(new Objeto(10));
+        nossaArvore.inserir(new Objeto(25));
+        nossaArvore.inserir(new Objeto(2));
+        nossaArvore.inserir(new Objeto(12));
+        nossaArvore.inserir(new Objeto(20));
+        nossaArvore.inserir(new Objeto(31));
+        nossaArvore.inserir(new Objeto(29));
+        nossaArvore.inserir(new Objeto(32));
+
+        nossaArvore.exibicaoEmOrdem();
+        nossaArvore.exibicaoPosOrdem();
+        nossaArvore.exibicaoPreOrdem();
     }
 }
