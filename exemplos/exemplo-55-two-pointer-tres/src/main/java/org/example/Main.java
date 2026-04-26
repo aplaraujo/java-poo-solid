@@ -2,24 +2,24 @@ package org.example;
 
 public class Main {
     // Remoção de duplicatas de um vetor
-    public static void removeDuplicates(int[] nums) {
-        if (nums.length == 0) return;
+    public static int removeDuplicates(int[] nums) {
+        int uniqueIndex = 0;
 
-        int i = 0;
-        for (int j = 1; j < nums.length; j++) {
-            if (nums[j] != nums[i]) {
-                i++;
-                nums[i] = nums[j];
+        for (int currentElement : nums) {
+            if (uniqueIndex == 0 || currentElement != nums[uniqueIndex - 1]) {
+                nums[uniqueIndex] = currentElement;
+                uniqueIndex++;
             }
         }
+        return uniqueIndex;
     }
 
     public static void main(String[] args) {
-        int[] grupoA = new int[]{1, 2, 2, 3, 4, 5};
+        int[] grupoA = {1, 2, 2, 3, 4, 5};
 
-        removeDuplicates(grupoA);
+        int uniqueCount = removeDuplicates(grupoA);
 
-        for (int i = 0; i < grupoA.length -1; i++){
+        for (int i = 0; i < uniqueCount; i++) {
             System.out.print(grupoA[i] + " ");
         }
     }
